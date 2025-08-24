@@ -28,7 +28,12 @@
 }
 
 .nav__brand { display: inline-flex; align-items: center; text-decoration: none; color: inherit; }
-.nav__logo { height: 36px; width: auto; display: block; }
+.nav__logo { 
+  height: 50px; 
+  width: auto; 
+  display: block; 
+  position: absolute;
+}
 
 /* Desktop menu */
 .nav__links { display: none; gap: 24px; align-items: center; }

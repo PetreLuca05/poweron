@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./navigationBar.css";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo_white.png";
 
 function NavigationBar() {
   const [open, setOpen] = useState(false);
