@@ -1,0 +1,93 @@
+:root {
+  --nav-bg: #0f1115;
+  --nav-fg: #ffffff;
+  --nav-muted: #b6bcc6;
+  --nav-accent: #34d399;
+  --nav-border: rgba(255,255,255,0.08);
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: var(--nav-bg);
+  color: var(--nav-fg);
+  border-bottom: 1px solid var(--nav-border);
+  backdrop-filter: saturate(160%) blur(6px);
+}
+
+.nav__inner {
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav__brand { display: inline-flex; align-items: center; text-decoration: none; color: inherit; }
+.nav__logo { height: 36px; width: auto; display: block; }
+
+/* Desktop menu */
+.nav__links { display: none; gap: 24px; align-items: center; }
+.nav__link {
+  position: relative;
+  font: 500 15px/1.2 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--nav-fg);
+  text-decoration: none;
+  opacity: 0.9;
+  padding: 10px 4px;
+  transition: opacity 150ms ease;
+}
+.nav__link:hover,
+.nav__link:focus-visible { opacity: 1; }
+
+/* Hamburger */
+.nav__toggle {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 42px; height: 42px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid var(--nav-border);
+  color: var(--nav-fg);
+  cursor: pointer;
+  padding: 0 10px;
+}
+.nav__toggle-bar { height: 2px; width: 100%; background: currentColor; border-radius: 2px; }
+
+/* Mobile dropdown: reliable max-height + opacity animation */
+.nav__mobile {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 250ms ease, opacity 200ms ease;
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+}
+.nav__mobile.is-open {
+  max-height: 240px; /* big enough for all links; adjust if you add more */
+  opacity: 1;
+}
+
+.nav__mobile-link {
+  display: block;
+  padding: 14px 20px;
+  font: 600 15px/1.2 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--nav-fg);
+  text-decoration: none;
+  border-top: 1px solid var(--nav-border);
+}
+.nav__mobile-link:hover,
+.nav__mobile-link:focus-visible { background: rgba(255,255,255,0.04); }
+
+/* Desktop breakpoint */
+@media (min-width: 768px) {
+  .nav__links { display: flex; }
+  .nav__toggle { display: none; }
+  .nav__mobile { display: none; }
+}
