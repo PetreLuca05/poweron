@@ -16,6 +16,15 @@ function NavigationBar() {
     return () => document.removeEventListener("keydown", onKeyDown);
   }, []);
 
+  window.addEventListener("scroll", () => {
+    const nav = document.querySelector(".nav");
+    if (window.scrollY > 20) {
+      nav.classList.add("is-scrolled");
+    } else {
+      nav.classList.remove("is-scrolled");
+    }
+  });
+
   // Robust outside click (pointerdown prevents click-timing issues)
   useEffect(() => {
     const onPointerDown = (e) => {
@@ -32,6 +41,8 @@ function NavigationBar() {
 
   const toggle = (e) => {
     // prevent this click from being treated as "outside"
+    const nav = document.querySelector(".nav");
+    nav.classList.add("is-scrolled");
     e.stopPropagation();
     setOpen((o) => !o);
   };
