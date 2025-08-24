@@ -1,8 +1,8 @@
 // ⬆️ All imports at the very top — nothing before these.
 import { useEffect, useRef, useState, useMemo } from "react";
-const bgImage1 = require("./assets/bg.jpg");
-const bgImage2 = require("./assets/bg2.jpg");
-const bgImage3 = require("./assets/bg3.jpg");
+const bgImage1 = require("./assets/image_8.jpg");
+const bgImage2 = require("./assets/image_6.jpg");
+const bgImage3 = require("./assets/bg.jpg");
 
 function HeroCarousel() {
   const [index, setIndex] = useState(0);
@@ -41,7 +41,7 @@ function HeroCarousel() {
       <section style={s.inner}>
         <div style={{ width: "100%", height: "100%", justifyContent: "center", display: "flex", flexDirection: "column", alignItems: "center" }}>
           <h1 style={s.h1}>Welcome</h1>
-          <p style={s.p}>Explore our services and offerings.</p>
+          <p style={s.p}>We specialize in delivering high-quality construction and infrastructure solutions tailored toyour needs.</p>
           <button style={s.button}>Our Work</button>
         </div>
       </section>
@@ -117,7 +117,6 @@ function HeroCarousel() {
         opacity: 0.9,
         margin: 0,
         textAlign: "center",
-        lineHeight: 1,
       },
     };
   }
