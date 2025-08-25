@@ -1,27 +1,33 @@
 {
   "files": {
-    "main.css": "/poweron/static/css/main.b6e793b6.css",
-    "main.js": "/poweron/static/js/main.2469bc03.js",
+    "main.css": "/poweron/static/css/main.8ad3a247.css",
+    "main.js": "/poweron/static/js/main.c860f9d5.js",
     "static/js/453.cf13f276.chunk.js": "/poweron/static/js/453.cf13f276.chunk.js",
-    "static/media/bg3.jpg": "/poweron/static/media/bg3.e61c4a8cd02fd6c85105.jpg",
-    "static/media/bg2.jpg": "/poweron/static/media/bg2.3042b1f0efa0ec8a0168.jpg",
     "static/media/image_6.jpg": "/poweron/static/media/image_6.7ac7585e6c6e59c0f279.jpg",
     "static/media/logo_white.png": "/poweron/static/media/logo_white.0eec70bc760a11f829a8.png",
     "static/media/image_8.jpg": "/poweron/static/media/image_8.f2cf10faf47472f45f94.jpg",
     "static/media/image_7.jpg": "/poweron/static/media/image_7.99e14376d96213151f4c.jpg",
     "static/media/bg.jpg": "/poweron/static/media/bg.365e3461735530e8c777.jpg",
+    "static/media/bloc_residential.jpg": "/poweron/static/media/bloc_residential.1c01071cd577347b1a5f.jpg",
+    "static/media/apa_canal_raja.jpg": "/poweron/static/media/apa_canal_raja.000eb3d39983c19962ca.jpg",
+    "static/media/team.jpg": "/poweron/static/media/team.b8b3ce2502665c61eba6.jpg",
+    "static/media/subtraversare.jpg": "/poweron/static/media/subtraversare.27c310ffeec61380f12b.jpg",
+    "static/media/kaufland.jpg": "/poweron/static/media/kaufland.9e0df3cb0cf4b134e8b4.jpg",
+    "static/media/lucrari_constructii.jpg": "/poweron/static/media/lucrari_constructii.45b95d399161ee776bde.jpg",
     "static/media/image_4.jpg": "/poweron/static/media/image_4.7a2f06935e0f1e5d9933.jpg",
     "static/media/image_5.jpg": "/poweron/static/media/image_5.a8a5ad3a6a8442c52679.jpg",
+    "static/media/hidranti_romstal.jpg": "/poweron/static/media/hidranti_romstal.514000403817efac7389.jpg",
+    "static/media/sediu.jpg": "/poweron/static/media/sediu.1b5c2036077926a2e728.jpg",
     "static/media/image_3.jpg": "/poweron/static/media/image_3.55b9fff8ec0b259d9428.jpg",
     "static/media/image_2.jpg": "/poweron/static/media/image_2.6611f1e2d7acabe2037b.jpg",
     "static/media/image_1.jpg": "/poweron/static/media/image_1.82a56136c5d494ad9e1a.jpg",
     "index.html": "/poweron/index.html",
-    "main.b6e793b6.css.map": "/poweron/static/css/main.b6e793b6.css.map",
-    "main.2469bc03.js.map": "/poweron/static/js/main.2469bc03.js.map",
+    "main.8ad3a247.css.map": "/poweron/static/css/main.8ad3a247.css.map",
+    "main.c860f9d5.js.map": "/poweron/static/js/main.c860f9d5.js.map",
     "453.cf13f276.chunk.js.map": "/poweron/static/js/453.cf13f276.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b6e793b6.css",
-    "static/js/main.2469bc03.js"
+    "static/css/main.8ad3a247.css",
+    "static/js/main.c860f9d5.js"
   ]
 }
