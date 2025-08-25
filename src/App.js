@@ -3,6 +3,7 @@ import Hero from './Hero';
 import Services from './Services';
 import Portofolio from './Portofolio'
 import AboutUs from './AboutUs';
+import Footer from './Footer';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Services />
       <Portofolio />
       <AboutUs />
+      <Footer />
     </div>
   );
 }

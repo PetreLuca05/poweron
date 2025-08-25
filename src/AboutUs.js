@@ -15,11 +15,11 @@ function AboutUs() {
         <button className='aboutus-button'>About Us</button>
       </div>
       <div className="container">
-        <card>
+        <card className='card'>
           <p className='subtitle'>Echipa noastra / Utilajele noastre</p>
           <img src={team} alt="About Us 1" className='au_image'/>
         </card>
-        <card>
+        <card className='card'>
           <p className='subtitle'>Sediul nostru din Constanța</p>
           <img src={services} alt="About Us 2" className='au_image'/>
         </card>
