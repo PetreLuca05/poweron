@@ -1,9 +1,9 @@
 import NavigationBar from './components/NavigationBar';
-import Hero from './Hero';
-import Services from './Services';
-import Portofolio from './Portofolio'
-import AboutUs from './AboutUs';
-import Footer from './Footer';
+import Hero from './index/Hero';
+import Services from './index/Services';
+import Portofolio from './index/Portofolio'
+import AboutUs from './index/AboutUs';
+import Footer from './components/Footer';
 
 function App() {
   return (

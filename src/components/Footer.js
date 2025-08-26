@@ -1,5 +1,5 @@
 import './Footer.css'
-const logo = require("./assets/logo.png");
+const logo = require("../assets/logo_white.png");
 
 export default function Footer() {
   

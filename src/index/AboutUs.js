@@ -2,17 +2,16 @@
 import React from 'react';
 import './AboutUs.css';
 
-const team = require("./assets/team.jpg");
-const services = require("./assets/sediu.jpg");
+const team = require("../assets/team.jpg");
+const services = require("../assets/sediu.jpg");
 
 function AboutUs() {
   return (
     <section className="aboutus-section">
       <div className="container">
-        <h1>About Us</h1>
         <h2>Calitate și profesionalism.</h2>
         <p>Ne adresăm unei game largi de clienți, fiecare lucrare fiind tratată în mod prefesionist,răspunzând cerințelor acestora. Investim în calitatea serviciilor și pregătirea profesionalăa angajaților noștri, pentru a răspunde prompt standardelor piețelor.</p>
-        <button className='aboutus-button'>About Us</button>
+        <button className='aboutus-button'>Learn More</button>
       </div>
       <div className="container">
         <card className='card'>

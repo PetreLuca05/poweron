@@ -1,14 +1,14 @@
 
 import "./Services.css";
 
-const service1Image = require("./assets/image_1.jpg");
-const service2Image = require("./assets/image_2.jpg");
-const service3Image = require("./assets/image_3.jpg");
-const service4Image = require("./assets/image_4.jpg");
-const service5Image = require("./assets/image_5.jpg");
-const service6Image = require("./assets/image_6.jpg");
-const service7Image = require("./assets/image_7.jpg");
-const service8Image = require("./assets/image_8.jpg");
+const service1Image = require("../assets/image_1.jpg");
+const service2Image = require("../assets/image_2.jpg");
+const service3Image = require("../assets/image_3.jpg");
+const service4Image = require("../assets/image_4.jpg");
+const service5Image = require("../assets/image_5.jpg");
+const service6Image = require("../assets/image_6.jpg");
+const service7Image = require("../assets/image_7.jpg");
+const service8Image = require("../assets/image_8.jpg");
 
 function Services() {
   return (

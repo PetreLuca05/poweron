@@ -1,31 +1,26 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import './Portofolio.css'
+import './Hero.css'
 
-const apa_canal_raja = require("./assets/slideshow/apa_canal_raja.jpg");
-const bloc_residential = require("./assets/slideshow/bloc_residential.jpg");
-const hidranti_romstal = require("./assets/slideshow/hidranti_romstal.jpg");
-const kaufland = require("./assets/slideshow/kaufland.jpg");
-const lucrari_constructii = require("./assets/slideshow/lucrari_constructii.jpg");
-const subtraversare = require("./assets/slideshow/subtraversare.jpg");
+const bgImage1 = require("../assets/image_8.jpg");
+const bgImage2 = require("../assets/image_6.jpg");
+const bgImage3 = require("../assets/bg.jpg");
 
-export default function Portofolio() {
+
+export default function Hero() {
   const slides = useMemo(
     () => [
-      { title: "Bloc rezidențial", cta: "Learn More", img: bloc_residential },
-      { title: "Instalații apă canal RAJA", cta: "Learn More", img: apa_canal_raja },
-      { title: "Hidranți Romstal", cta: "Learn More", img: hidranti_romstal },
-      { title: "Lucrări construcții", cta: "Learn More", img: lucrari_constructii },
-      { title: "Kaufland", cta: "Learn More", img: kaufland },
-      { title: "Subtraversare", cta: "Learn More", img: subtraversare }
+      { title: "PowerON", cta: "Learn More", img: bgImage1, after: 'We specialize in delivering high-quality construction and infrastructure solutions tailored toyour needs.'},
+      { title: "Instalare", cta: "Learn More", img: bgImage2, after: 'Instalare panouri solare, pompă de căldură si climatizare'},
+      { title: "Let’s Build Together", cta: "Learn More", img: bgImage3, after: '' },
     ],
     []
   );
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, align: "start", dragFree: false, slidesToScroll: 1, containScroll: "trimSnaps" },
-    [Autoplay({ delay: 4000, stopOnInteraction: false })]
+    { loop: true, align: "start", dragFree: false, slidesToScroll: 1 },
+    [Autoplay({ delay: 100000000, stopOnInteraction: false })]
   );
 
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -53,8 +48,7 @@ export default function Portofolio() {
   const scrollTo = useCallback((i) => emblaApi && emblaApi.scrollTo(i), [emblaApi]);
 
   return (
-    <section className="portfolio-section">
-      <h2 className="header">Portfolio</h2>
+    <section className="hero-section">
       <div className="embla" ref={emblaRef}>
         <div className="embla__container">
           {slides.map((s, idx) => (
@@ -62,11 +56,22 @@ export default function Portofolio() {
               <img src={s.img} alt={s.title} className="embla__img" />
               <div className="overlay">
                 <h3>{s.title}</h3>
+                <p style={{ display: s.after === '' ? 'none' : 'block' }} >{s.after}</p>
                 <a href="#" className="cta">{s.cta}</a>
               </div>
             </article>
           ))}
         </div>
+      </div>
+
+      <div className="navigators">
+        <button className="navig navig-left" onClick={scrollPrev} aria-label="Previous">
+          <p>‹</p>
+        </button>
+
+        <button className="navig navig-right" onClick={scrollNext} aria-label="Next">
+          <p>›</p>
+        </button>
       </div>
 
       <div className="dots">

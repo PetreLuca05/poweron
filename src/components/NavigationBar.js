@@ -66,6 +66,11 @@ function NavigationBar() {
           <a href="#services" className="nav__link">Contact</a>
         </nav>
 
+        <nav className="nav__links" aria-label="Primary">
+          <i class="fa-solid fa-phone"></i>
+          <a href="#home" className="nav__link"> 0728 871 868</a>
+        </nav>
+
         {/* Mobile toggle */}
         <button
           ref={btnRef}
