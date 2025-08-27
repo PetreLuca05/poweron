@@ -1,11 +1,14 @@
 import { useEffect, useRef, useState } from "react";
-import "./navigationBar.css";
+import "./NavigationBar.css";
 import logo from "../assets/logo_white.png";
+import { useNavigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function NavigationBar() {
   const [open, setOpen] = useState(false);
   const btnRef = useRef(null);
   const menuRef = useRef(null);
+  const navigate = useNavigate();
 
   // Close on Escape
   useEffect(() => {
@@ -55,15 +58,15 @@ function NavigationBar() {
   return (
     <header className="nav">
       <div className="nav__inner">
-        <a href="#home" className="nav__brand" aria-label="Home">
+        <Link to="/" className="nav__brand">
           <img src={logo} alt="Logo" className="nav__logo" />
-        </a>
+        </Link>
 
         {/* Desktop menu */}
         <nav className="nav__links" aria-label="Primary">
-          <a href="#home" className="nav__link">Despre Noi</a>
-          <a href="#about" className="nav__link">Portofoliu</a>
-          <a href="#services" className="nav__link">Contact</a>
+          <Link to="/about" className="nav__link">Despre Noi</Link>
+          <Link to="/portofolio" className="nav__link">Portofoliu</Link>
+          <Link to="/" className="nav__link">Contact</Link>
         </nav>
 
         <nav className="nav__links" aria-label="Primary">
@@ -95,15 +98,9 @@ function NavigationBar() {
         aria-label="Meniu mobil"
         onPointerDown={(e) => e.stopPropagation()}
       >
-        <a href="#home" className="nav__mobile-link" onClick={close}>
-          Despre Noi
-        </a>
-        <a href="#about" className="nav__mobile-link" onClick={close}>
-          Portofoliu
-        </a>
-        <a href="#services" className="nav__mobile-link" onClick={close}>
-          Contact
-        </a>
+        <Link to="/about" className="nav__mobile-link">Despre Noi</Link>
+        <Link to="/" className="nav__mobile-link">Portofoliu</Link>
+        <Link to="/" className="nav__mobile-link">Contact</Link>
       </nav>
     </header>
   );
