@@ -46,6 +46,20 @@ Am acumulat experiență în producția de confecții metalice</li>
         </div>
         <img src={history} alt="Istoric" />
       </section>
+
+      <section className="certificates">
+        <h1>Certificări</h1>
+        <div className="certificates-stats-container">
+          <Certificate header="Certificarea 1" year="2015" />
+          <Certificate header="Certificarea 2" year="2018" />
+          <Certificate header="Certificarea 3" year="2020" />
+          <Certificate header="Certificarea 4" year="2015" />
+          <Certificate header="Premiu" year="2018" />
+          <Certificate header="Diploma de partifipare la …" year="2020" />
+          <Certificate header="Recunoasterea din partea unei istiturii sau a unui partener / client" year="2015" />
+          <Certificate header="Orice altceva care va poate reprezenta …." year="2018" />
+        </div>
+      </section>
     </div>
   );
 }
@@ -55,6 +69,15 @@ function HistoryStats({header, subheader}){
     <article className="history-stats">
       <h3>{header}</h3>
       <p>{subheader}</p>
+    </article>
+  );
+}
+
+function Certificate({header, year}){
+  return (
+    <article className="certificates-item">
+      <h5>{header}</h5>
+      <p>{year}</p>
     </article>
   );
 }

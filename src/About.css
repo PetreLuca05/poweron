@@ -12,7 +12,7 @@
 
 /* Background colors */
 .hero {
-  background-color: #20242c;
+  background-color: #14161b;
 }
 .history {
   background-color: var(--background);
@@ -95,6 +95,74 @@
 .history .history-stats-container p {
   margin: 0;
   color: rgba(255, 255, 255, 0.75);
+}
+
+.certificates {
+  min-height: 50vh;
+  padding: 100px 200px;
+  background-color: #14161b;
+}
+
+/* Base layout: 2 columns */
+.certificates .certificates-stats-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 40px; /* row-gap and column-gap */
+  padding: 50px 0px;
+}
+
+/* Each item */
+.certificates-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: rgba(255, 255, 255, 0.25) solid 1px;
+  padding: 12px 0;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+/* Tablet: reduce padding */
+@media (max-width: 1024px) {
+  .certificates {
+    padding: 0 100px;
+  }
+}
+
+/* Small tablets: keep 2 columns but tighter */
+@media (max-width: 768px) {
+  .certificates {
+    padding: 0 40px;
+  }
+
+  .certificates .certificates-stats-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 20px;
+  }
+}
+
+/* Mobile: switch to 1 column */
+@media (max-width: 600px) {
+  .certificates {
+    padding: 50px 20px;
+  }
+
+  .certificates .certificates-stats-container {
+    grid-template-columns: 1fr; /* single column */
+    gap: 14px;
+  }
+
+  .certificates-item {
+    flex-direction: column; /* stack content */
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
+
+
+.certificates-item h5{
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.2rem;
 }
 
 /* ----------------- RESPONSIVE ----------------- */
