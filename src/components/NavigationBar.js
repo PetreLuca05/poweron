@@ -99,8 +99,8 @@ function NavigationBar() {
         onPointerDown={(e) => e.stopPropagation()}
       >
         <Link to="/about" className="nav__mobile-link">Despre Noi</Link>
-        <Link to="/" className="nav__mobile-link">Portofoliu</Link>
-        <Link to="/" className="nav__mobile-link">Contact</Link>
+        <Link to="/portofolio" className="nav__mobile-link">Portofoliu</Link>
+        <Link to="/contact" className="nav__mobile-link">Contact</Link>
       </nav>
     </header>
   );

@@ -22,7 +22,7 @@ export default function Footer() {
 
       <div className="footer-container">
         <i className="fa-solid fa-envelope" id="footer-icon"></i>
-        <p className='footer-text'>info @ pwron.ro</p>
+        <p className='footer-text'>info@pwron.ro</p>
       </div>
     </section>
   );

@@ -102,7 +102,7 @@
 .nav__mobile-link:focus-visible { background: rgba(255,255,255,0.04); }
 
 /* Desktop breakpoint */
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .nav__links { display: flex; }
   .nav__toggle { display: none; }
   .nav__logo { 
@@ -111,7 +111,7 @@
 }
 
 /* Mobile breakpoint */
-@media (max-width: 767px) {
+@media (max-width: 900px) {
   .nav__inner {
     padding-left: 10px; /* remove padding on mobile */
     padding-right: 10px; /* remove padding on mobile */

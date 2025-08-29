@@ -4,26 +4,26 @@ import Autoplay from "embla-carousel-autoplay";
 import "./Home.css";
 
 // Images
-const team = require("./assets/team.jpg");
-const servicesImg = require("./assets/sediu.jpg");
-const bgImage1 = require("./assets/image_8.jpg");
-const bgImage2 = require("./assets/image_6.jpg");
-const bgImage3 = require("./assets/bg.jpg");
-const apa_canal_raja = require("./assets/slideshow/apa_canal_raja.jpg");
-const bloc_residential = require("./assets/slideshow/bloc_residential.jpg");
-const hidranti_romstal = require("./assets/slideshow/hidranti_romstal.jpg");
-const kaufland = require("./assets/slideshow/kaufland.jpg");
-const lucrari_constructii = require("./assets/slideshow/lucrari_constructii.jpg");
-const subtraversare = require("./assets/slideshow/subtraversare.jpg");
+const team = require("./assets/1.jpeg");
+const servicesImg = require("./assets/2.jpg");
+const bgImage1 = require("./assets/3.jpg");
+const bgImage2 = require("./assets/4.jpg");
+const bgImage3 = require("./assets/5.jpg");
+const apa_canal_raja = require("./assets/6.jpg");
+const bloc_residential = require("./assets/7.jpg");
+const hidranti_romstal = require("./assets/8.jpg");
+const kaufland = require("./assets/9.jpg");
+const lucrari_constructii = require("./assets/10.jpg");
+const subtraversare = require("./assets/11.jpg");
 
-const service1Image = require("./assets/image_1.jpg");
-const service2Image = require("./assets/image_2.jpg");
-const service3Image = require("./assets/image_3.jpg");
-const service4Image = require("./assets/image_4.jpg");
-const service5Image = require("./assets/image_5.jpg");
-const service6Image = require("./assets/image_6.jpg");
-const service7Image = require("./assets/image_7.jpg");
-const service8Image = require("./assets/image_8.jpg");
+const service1Image = require("./assets/12.jpg");
+const service2Image = require("./assets/13.jpg");
+const service3Image = require("./assets/14.jpg");
+const service4Image = require("./assets/15.jpg");
+const service5Image = require("./assets/16.jpg");
+const service6Image = require("./assets/17.jpg");
+const service7Image = require("./assets/18.jpg");
+const service8Image = require("./assets/19.jpg");
 
 export default function HomePage() {
   /* --- Hero slider state --- */

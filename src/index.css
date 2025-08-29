@@ -18,6 +18,7 @@
   --accent: #b41a15;
   --nav-border: rgba(255,255,255,0.08);
   --card-bg: rgba(255, 255, 255, 0.05);
+  --background: #0f1115;
 }
 
 img{
@@ -26,4 +27,5 @@ img{
 
 html{
   scroll-behavior: smooth;
+  background-color: black;
 }
