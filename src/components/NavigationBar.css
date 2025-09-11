@@ -1,15 +1,120 @@
-.navbar {
-  background-color: rgb(255, 0, 0);
+.nav {
   position: fixed;
   top: 0;
-  left: 0;
+  z-index: 999999999;
   width: 100%;
-  height: 50px;
+  background: transparent; /* default at top */
+  color: var(--nav-fg);
+  border-bottom: 1px solid transparent;
+  /* backdrop-filter: saturate(160%) blur(6px); */
+  transition: 300ms ease, border-color 300ms ease;
+  padding: 30px 0;
 }
 
-.navbar p {
-  color: white;
-  text-align: center;
-  line-height: 50px;
-  margin: 0;
+.nav.is-scrolled {
+  background: var(--nav-bg);        /* solid */
+  border-bottom: 1px solid var(--nav-border);
+  padding: 0px 0;
+}
+
+.nav__inner {
+  margin: 0 auto;
+  padding: 14px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__brand { display: inline-flex; align-items: center; text-decoration: none; color: inherit; }
+.nav__logo { 
+  height: 50px; 
+  width: auto; 
+  display: block; 
+  position: absolute;
+  transition: 300ms ease;
+}
+
+.nav.is-scrolled .nav__logo {
+  height: 50px; 
+}
+
+/* Desktop menu */
+.nav__links { display: none; gap: 75px; align-items: center; flex: 1; justify-content: center;}
+.nav__links:nth-child(3) {
+  gap: 10px;
+  justify-content: flex-end;
+}
+.nav__brand{
+  flex: 1;
+}
+.nav__link {
+  position: relative;
+  font: 500 15px/1.2 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--nav-fg);
+  text-decoration: none;
+  opacity: 0.9;
+  padding: 10px 4px;
+  transition: opacity 150ms ease;
+  width: max-content;
+}
+.nav__link:hover,
+.nav__link:focus-visible { opacity: 1; }
+
+/* Hamburger */
+.nav__toggle {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 42px; height: 42px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid var(--nav-border);
+  color: var(--nav-fg);
+  cursor: pointer;
+  padding: 0 10px;
+}
+.nav__toggle-bar { height: 2px; width: 100%; background: currentColor; border-radius: 2px; }
+
+/* Mobile dropdown: reliable max-height + opacity animation */
+.nav__mobile {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+
+  transition: max-height 250ms ease, opacity 200ms ease;
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+}
+.nav__mobile.is-open {
+  max-height: 240px; /* big enough for all links; adjust if you add more */
+  opacity: 1;
+}
+
+.nav__mobile-link {
+  display: block;
+  padding: 14px 20px;
+  font: 600 15px/1.2 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--nav-fg);
+  text-decoration: none;
+  border-top: 1px solid var(--nav-border);
+}
+.nav__mobile-link:hover,
+.nav__mobile-link:focus-visible { background: rgba(255,255,255,0.04); }
+
+/* Desktop breakpoint */
+@media (min-width: 900px) {
+  .nav__links { display: flex; }
+  .nav__toggle { display: none; }
+  .nav__logo { 
+    height: 70px; 
+  }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 900px) {
+  .nav__inner {
+    padding-left: 10px; /* remove padding on mobile */
+    padding-right: 10px; /* remove padding on mobile */
+  }
 }

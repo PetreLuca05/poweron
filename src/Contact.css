@@ -1,0 +1,198 @@
+/* Contact.css */
+.contact-page {
+  margin: 0 auto;
+  padding: 10rem 1rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  background: var(--background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+
+}
+
+.contact-page h1 {
+  font-size: 2rem;
+  text-align: left;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+.contact-page h2 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.contact-hero-image-overlay p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: left;
+}
+
+.contact-hero-content p {
+  font-size: 1rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.contact-hero-content a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #0073e6;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.contact-hero-content a:hover {
+  color: #004b9a;
+}
+
+/* --- Layout: mobile first (column), row on larger screens --- */
+.contact-page-hero {
+  display: flex;
+  flex-direction: column;   /* stack on mobile */
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* ===== Slideshow: responsive landscape 16:9 ===== */
+.contact-hero-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+
+  /* Modern browsers: keep 16:9 */
+  aspect-ratio: 16 / 9;
+  /* Ensure good size on small screens */
+  min-height: 220px;
+}
+
+/* Fallback for browsers without aspect-ratio */
+.contact-hero-image::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%; /* 16:9 ratio */
+}
+
+/* Stack all slides inside the ratio box */
+.contact-hero-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /* cross-fade */
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+.contact-hero-image img.active {
+  opacity: 1;
+}
+
+/* Overlay button */
+.contact-hero-image-overlay {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: var(--accent);
+  padding: 0.8rem 1.5rem;
+  border-top-left-radius: 12px;
+  z-index: 2;
+}
+.contact-hero-image-overlay:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* Contact content */
+.contact-hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;  /* center on mobile */
+  align-items: center;
+}
+
+/* -------- Breakpoints -------- */
+
+/* Medium screens: slightly larger type and image height */
+@media (min-width: 600px) {
+  .contact-hero-image {
+    min-height: 320px;
+  }
+}
+
+/* Tablet and up: switch to row layout */
+@media (min-width: 900px) {
+  .contact-page h1 {
+    font-size: 2.5rem;
+  }
+
+  .contact-page h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-page-hero {
+    flex-direction: row;               /* row on larger screens */
+    align-items: flex-end;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .contact-hero-image,
+  .contact-hero-content {
+    flex: 1;
+  }
+
+  .contact-hero-content {
+    align-items: flex-start;           /* left-align text on desktop */
+    text-align: left;
+    justify-content: center;
+  }
+
+  .contact-hero-image {
+    min-height: 420px;                 /* taller hero */
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .contact-page {
+    padding: 10rem 10rem;
+  }
+
+  .contact-hero-content p,
+  .contact-hero-content a {
+    font-size: 1.1rem;
+  }
+
+  .contact-hero-image-overlay p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Large desktop: allow the slideshow to scale up nicely */
+@media (min-width: 1280px) {
+  .contact-hero-image {
+    min-height: 520px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .contact-hero-image {
+    min-height: 620px;
+  }
+}

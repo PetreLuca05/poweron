@@ -1,0 +1,246 @@
+  /* --- Container: Masonry columns --- */
+  .portofolio-container {
+    background-color: var(--background);
+  }
+
+  .portofolio-hero{
+    
+  }
+
+  .portofolio-container h1{
+    margin: 0 0 12px;
+    font-size: 3rem;
+    color: var(--accent);
+    margin: 0 auto;
+    padding: 20px 0px;
+    text-align: left;
+  }
+
+  .project-list {
+    /* creates the masonry effect */
+    column-count: 1;
+    column-gap: 16px;
+    margin: 0 auto;
+  }
+
+  .project-list h1 {
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: #333;
+    width: 100vw;
+    position: relative;
+  }
+
+  @media (max-width: 600px) {
+    .project-list { column-count: 1; }
+      .portofolio-hero {
+      padding: 0px 20px;
+      padding-top: 100px;
+    }
+  }
+
+  /* responsive column counts */
+  @media (min-width: 600px) {
+    .project-list { column-count: 2; }
+      .portofolio-hero {
+      padding: 0px 25px;
+      padding-top: 200px;
+    }
+  }
+  @media (min-width: 900px) {
+    .project-list { column-count: 3; }
+      .portofolio-hero {
+      padding: 0px 50px;
+      padding-top: 200px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .project-list { column-count: 4; }
+      .portofolio-hero {
+      padding: 0px 100px;
+      padding-top: 200px;
+    }
+  }
+  @media (min-width: 2000px) {
+    .project-list { column-count: 4; }
+      .portofolio-hero {
+      padding: 0px 200px;
+      padding-top: 200px;
+    }
+  }
+
+  /* --- Card --- */
+  .project-item {
+    /* important for masonry: avoid splitting across columns */
+    break-inside: avoid;
+
+    position: relative;
+    margin: 0 0 16px;        /* vertical spacing between items */
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+
+    /* make each item a different height (non-uniform) */
+    /* change via CSS variable and aspect-ratio */
+    --ar: 4/3;
+    aspect-ratio: var(--ar);
+    background: #f3f3f3;     /* placeholder color while images load */
+    transform: translateZ(0); /* enable smoother hover transforms */
+  }
+
+  /* vary the aspect ratio per item to guarantee non-uniform heights */
+  .project-item:nth-child(6n + 1) { --ar: 1/1;   }  /* square */
+  .project-item:nth-child(6n + 2) { --ar: 16/9;  }  /* widescreen */
+  .project-item:nth-child(6n + 3) { --ar: 3/4;   }  /* portrait */
+  .project-item:nth-child(6n + 4) { --ar: 21/9;  }  /* ultra-wide */
+  .project-item:nth-child(6n + 5) { --ar: 4/3;   }  /* classic */
+  .project-item:nth-child(6n + 6) { --ar: 3/2;   }
+
+  /* --- Image fills the card --- */
+  .project-item > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .35s ease, filter .35s ease;
+    display: block;
+  }
+
+  /* subtle hover polish */
+  .project-item:hover > img {
+    transform: scale(1.04);
+    filter: saturate(1.05) contrast(1.02);
+  }
+
+  /* --- Caption overlay --- */
+  .project-info {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 12px 14px;
+    background: linear-gradient(
+      to top,
+      rgba(0,0,0,0.6) 0%,
+      rgba(0,0,0,0.35) 45%,
+      rgba(0,0,0,0.0) 100%
+    );
+    color: #fff;
+    display: flex;
+    align-items: flex-end;
+    min-height: 38%; /* nice balanced overlay */
+    pointer-events: none; /* keep hover on the image/card */
+  }
+
+  .project-info h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+    text-transform: capitalize;
+  }
+
+  /* optional: nicer focus behavior if you ever make items clickable */
+  .project-item:focus-within,
+  .project-item:focus {
+    outline: 2px solid #6366f1;
+    outline-offset: 2px;
+    border-radius: 16px;
+  }
+/* Call-to-action section */
+.discutam {
+  --bg1: #0f172a;   /* slate-900 */
+  --bg2: #1e293b;   /* slate-800 */
+  --accent: #22d3ee;/* cyan-400 */
+
+  margin-top: 100px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: clamp(2rem, 5vw, 5rem) 1.25rem;
+  color: #e5e7eb; /* slate-200 */
+  /* Add an image background */
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.8),
+      rgba(0,0,0,0.8)
+    ),
+    url('./assets/meeting.jpg');
+  background-position: center;
+  background-size: cover;
+  
+}
+
+.discutam > * {
+  margin: 0;
+}
+
+/* Headline (h2) */
+.discutam h2 {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  font-size: clamp(1.25rem, 2.2vw, 2rem);
+  color: #ffffff;
+  opacity: 0.95;
+}
+
+/* Phone number (h1) – big, bold CTA */
+.discutam h1, .discutam a {
+  font-size: clamp(2rem, 7vw, 4rem);
+  line-height: 1.1;
+  margin-top: clamp(0.5rem, 1.5vw, 1rem);
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 6px 24px rgba(34, 211, 238, 0.2);
+}
+
+/* If you make the phone a link (<a href="tel:...">), style it too */
+.discutam h1 a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 3px solid rgba(34, 211, 238, 0.6);
+  padding-bottom: 2px;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  box-shadow: 0 0 0 0 rgba(34, 211, 238, 0);
+}
+.discutam h1 a:hover,
+.discutam h1 a:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(34, 211, 238, 0.9);
+  box-shadow: 0 8px 28px rgba(34, 211, 238, 0.25);
+  outline: none;
+}
+
+/* Description (p) */
+.discutam p {
+  max-width: 60ch;
+  margin: clamp(0.75rem, 2vw, 1.25rem) auto 0;
+  font-size: clamp(0.95rem, 1.4vw, 1.125rem);
+  line-height: 1.7;
+  color: rgba(229, 231, 235, 0.85);
+}
+
+/* Optional: subtle entrance animation */
+@media (prefers-reduced-motion: no-preference) {
+  .discutam {
+    animation: discussFade .6s ease both;
+  }
+  @keyframes discussFade {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* Tablet tweaks */
+@media (max-width: 900px) {
+  .discutam {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Mobile tweaks */
+@media (max-width: 600px) {
+  .discutam h2 { letter-spacing: 0; }
+  .discutam p { max-width: 100%; }
+
+}
