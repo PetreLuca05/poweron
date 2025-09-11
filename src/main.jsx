@@ -6,9 +6,9 @@ import About from './About.jsx'
 import Contact from './Contact.jsx'
 import Portofolio from './Portofolio.jsx'
 import NavigationBar from './components/NavigationBar.jsx'
-import {createBrowserRouter, createHashRouter, RouterProvider} from "react-router-dom";
+import {createHashRouter, RouterProvider} from "react-router-dom";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Home />,
@@ -33,7 +33,6 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <NavigationBar />
     <RouterProvider router={router} />
   </StrictMode>,
 )
