@@ -5,29 +5,35 @@ import Home from './Home.jsx'
 import About from './About.jsx'
 import Contact from './Contact.jsx'
 import Portofolio from './Portofolio.jsx'
-import {createHashRouter, RouterProvider} from "react-router-dom";
+import NavigationBar from './components/NavigationBar.jsx'
+import {createBrowserRouter, createHashRouter, RouterProvider} from "react-router-dom";
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+    errorElement: <div>Not Found</div>,
   },
   {
     path: "/about",
     element: <About />,
+    errorElement: <div>Not Found</div>,
   },
   {
     path: "/contact",
     element: <Contact />,
+    errorElement: <div>Not Found</div>,
   },
   {
     path: "/portofolio",
     element: <Portofolio />,
+    errorElement: <div>Not Found</div>,
   },
 ]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <NavigationBar />
     <RouterProvider router={router} />
   </StrictMode>,
 )
