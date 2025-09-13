@@ -1,8 +1,10 @@
 import React from 'react';
 import './Footer.css';
 import logo from "../assets/logo_white.png";
+import { useLanguage } from "./LanguageContext.jsx";
 
 export default function Footer() {
+  const { lang } = useLanguage();
 
   const openGoogleMaps = () => {
     window.open(
@@ -15,7 +17,7 @@ export default function Footer() {
     <section className="footer-section">
       <div className="footer-container">
         <img src={logo} alt="Logo" className="footer-logo" />
-        <p className='footer-text' style={{textDecoration: "none"}}>© PowerOn. Toate drepturile rezervate.</p>
+        <p className='footer-text' style={{textDecoration: "none"}}>© PowerOn. All rights reserved.</p>
       </div>
 
       <div className="footer-container">

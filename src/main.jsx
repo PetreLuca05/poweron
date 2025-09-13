@@ -6,6 +6,7 @@ import About from './About.jsx'
 import Contact from './Contact.jsx'
 import Portofolio from './Portofolio.jsx'
 import NavigationBar from './components/NavigationBar.jsx'
+import { LanguageProvider } from "./components/LanguageContext.jsx";
 import {createHashRouter, RouterProvider} from "react-router-dom";
 
 const router = createHashRouter([
@@ -32,7 +33,7 @@ const router = createHashRouter([
 ]);
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>,
+  <LanguageProvider>
+      <RouterProvider router={router} />
+    </LanguageProvider>
 )

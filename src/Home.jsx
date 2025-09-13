@@ -4,6 +4,7 @@ import Autoplay from "embla-carousel-autoplay";
 import NavigationBar from './components/NavigationBar';
 import "./Home.css";
 import Footer from "./components/Footer";
+import { useLanguage } from "./components/LanguageContext.jsx";
 
 // Images
 import team from "./assets/1.jpeg";
@@ -27,42 +28,263 @@ import service6Image from "./assets/25.jpg";
 import service7Image from "./assets/17.jpg";
 import service8Image from "./assets/44.jpg";
 
-//calitate si profesionalism
+// calitate si profesionalism
 import cp_1 from "./assets/19.jpg";
 import cp_2 from "./assets/1.jpeg";
 
 export default function HomePage() {
+  const { lang } = useLanguage();
+
+  // --------- i18n dictionary ----------
+  const t = useMemo(() => {
+    if (lang === "en") {
+      return {
+        hero: [
+          {
+            title: "PowerON",
+            cta: "Learn More",
+            after:
+              "We specialize in delivering high-quality construction and infrastructure solutions tailored to your needs.",
+          },
+          {
+            title: "Installations",
+            cta: "Learn More",
+            after: "Installation of solar panels, heat pumps, and air conditioning.",
+          },
+          { title: "Let’s Build Together", cta: "Contact Us", after: "" },
+        ],
+        portfolioSlides: [
+          { title: "Residential block" },
+          { title: "RAJA water & sewer installations" },
+          { title: "Romstal hydrants" },
+          { title: "Construction works" },
+          { title: "Kaufland" },
+          { title: "Horizontal drilling (underpass)" },
+        ],
+        headings: {
+          services: "Services",
+          portfolio: "Portfolio",
+          aboutTitle: "Quality and professionalism.",
+          aboutCta: "Learn More",
+        },
+        aboutText:
+          "We serve a wide range of clients, handling every project professionally and meeting their requirements. We invest in service quality and in the professional development of our employees to promptly meet market standards.",
+        portfolioCta: "View portfolio",
+        services: [
+          {
+            title: "Sanitary and fire-fighting installations",
+            description: null,
+            items: [
+              "We build and maintain fire-fighting systems – hydrants, sprinklers, deluge systems, pumping stations",
+              "IGSU certified",
+            ],
+            image: service1Image,
+          },
+          {
+            title: "Ventilation and smoke extraction",
+            description: null,
+            items: [
+              "We build and maintain smoke extraction systems (specific ducting)",
+              "IGSU certified",
+            ],
+            image: service2Image,
+          },
+          {
+            title: "Horizontal directional drilling – underpass",
+            description: null,
+            items: [
+              "We replace and/or extend gas, water pipes, power cables or fiber optics with steerable drilling equipment up to 500 mm diameter.",
+            ],
+            image: service3Image,
+          },
+          {
+            title: "Utility installations and civil works",
+            description: null,
+            items: [
+              "We execute road markings, parking lots with mono-component, bi-component paint, or Swarco preformed",
+              "BRML and RAJA authorized for water and sewer works.",
+            ],
+            image: service4Image,
+          },
+          {
+            title: "Thermal and air-conditioning installations",
+            description: "We build and maintain",
+            items: [
+              "HVAC systems",
+              "DHW (domestic hot water) systems",
+              "industrial boiler room installations",
+              "multi-split air-conditioning systems",
+              "VRV systems",
+            ],
+            image: service5Image,
+          },
+          {
+            title: "Electrical installations",
+            description: null,
+            items: [
+              "We build and maintain low-voltage electrical installations",
+              "We perform PRAM measurements",
+              "ANRE certified",
+            ],
+            image: service6Image,
+          },
+          {
+            title: "Other works",
+            description: null,
+            items: ["Excavations, slope grading, demolitions, asphalt cutting, paving."],
+            image: service7Image,
+          },
+          {
+            title: "Civil constructions",
+            description: null,
+            items: [
+              "<b>Residential</b>: Housing complexes (blocks, villas, houses), apartments, duplexes.",
+              "<b>Social-cultural</b>: Schools, kindergartens, sports halls, theatres, libraries, museums.",
+              "<b>Administrative</b>: Office buildings, administrative headquarters, shopping centers.",
+              "<b>Hotels and guesthouses</b>: Buildings intended for accommodation and tourism.",
+              "<b>Restaurants and fast-food</b>: Public venues for dining.",
+            ],
+            image: service8Image,
+          },
+        ],
+      };
+    }
+
+    // Romanian
+    return {
+      hero: [
+        {
+          title: "PowerON",
+          cta: "Află mai mult",
+          after:
+            "Suntem specializați în soluții de construcții și infrastructură de înaltă calitate, adaptate nevoilor tale.",
+        },
+        {
+          title: "Instalare",
+          cta: "Află mai mult",
+          after: "Instalare panouri solare, pompă de căldură și climatizare.",
+        },
+        { title: "Construim împreună", cta: "Contactează-ne", after: "" },
+      ],
+      portfolioSlides: [
+        { title: "Bloc rezidențial" },
+        { title: "Instalații apă-canal RAJA" },
+        { title: "Hidranți Romstal" },
+        { title: "Lucrări construcții" },
+        { title: "Kaufland" },
+        { title: "Subtraversare" },
+      ],
+      headings: {
+        services: "Servicii",
+        portfolio: "Portofoliu",
+        aboutTitle: "Calitate și profesionalism.",
+        aboutCta: "Află mai mult",
+      },
+      aboutText:
+        "Ne adresăm unei game largi de clienți, fiecare lucrare fiind tratată profesionist, răspunzând cerințelor acestora. Investim în calitatea serviciilor și în pregătirea profesională a angajaților noștri, pentru a răspunde prompt standardelor pieței.",
+      portfolioCta: "Vezi portofoliul",
+      services: [
+        {
+          title: "Instalații sanitare și de incendiu",
+          description: null,
+          items: [
+            "Executăm și întreținem instalații de stingere incendiu – hidranți, sprinklere, drencere, stații de pompare",
+            "Suntem autorizați IGSU",
+          ],
+          image: service1Image,
+        },
+        {
+          title: "Instalații ventilație și desfumare",
+          description: null,
+          items: [
+            "Executăm și întreținem instalații desfumare (tubulatură specifică)",
+            "Suntem autorizați IGSU",
+          ],
+          image: service2Image,
+        },
+        {
+          title: "Foraj orizontal dirijat – subtraversare",
+          description: null,
+          items: [
+            "Executăm lucrări de înlocuire și/sau extindere conducte gaze, apă, cabluri electrice sau fibră optică cu echipament de foraj dirijabil cu diametre de până la 500 mm.",
+          ],
+          image: service3Image,
+        },
+        {
+          title: "Instalații și lucrări edilitare",
+          description: null,
+          items: [
+            "Executăm marcaje rutiere, parcări cu vopsea monocomponentă, bicomponentă sau preformate Swarco",
+            "Suntem autorizați BRML și RAJA pentru lucrări de apă și canalizare.",
+          ],
+          image: service4Image,
+        },
+        {
+          title: "Instalații termice și de climatizare",
+          description: "Executăm și întreținem",
+          items: [
+            "instalații HVAC",
+            "instalații ACM",
+            "instalații centrale termice industriale",
+            "sisteme climatizare multisplit",
+            "sisteme VRV",
+          ],
+          image: service5Image,
+        },
+        {
+          title: "Instalații electrice",
+          description: null,
+          items: [
+            "Executăm și întreținem instalații electrice de joasă tensiune",
+            "Efectuăm măsurători PRAM",
+            "Suntem autorizați ANRE",
+          ],
+          image: service6Image,
+        },
+        {
+          title: "Alte lucrări",
+          description: null,
+          items: ["Executăm săpături, taluzări, demolări, tăiat asfalt, asfaltări."],
+          image: service7Image,
+        },
+        {
+          title: "Construcții civile",
+          description: null,
+          items: [
+            "<b>Rezidențiale</b>: Ansambluri de locuințe (blocuri, vile, case), apartamente, duplexuri.",
+            "<b>Social-culturale</b>: Școli, grădinițe, săli de sport, teatre, biblioteci, muzee.",
+            "<b>Administrative</b>: Clădiri de birouri, sedii administrative, centre comerciale.",
+            "<b>Hoteluri și pensiuni</b>: Structuri destinate cazării și turismului.",
+            "<b>Restaurante și fast-food</b>: Localuri publice pentru servirea mesei.",
+          ],
+          image: service8Image,
+        },
+      ],
+    };
+  }, [lang]);
+
   /* --- Hero slider state --- */
   const heroSlides = useMemo(
-    () => [
-      {
-        title: "PowerON",
-        cta: "Află mai mult",
-        img: bgImage1,
-        after:
-          "Suntem specializați în furnizarea de soluții de construcții și infrastructură de înaltă calitate, adaptate nevoilor tale.",
-      },
-      {
-        title: "Instalare",
-        cta: "Află mai mult",
-        img: bgImage2,
-        after: "Instalare panouri solare, pompă de căldură și climatizare.",
-      },
-      { title: "Construim împreună", cta: "Contactează-ne", img: bgImage3, after: "" },
-    ],
-    []
+    () =>
+      t.hero.map((h, i) => ({
+        title: h.title,
+        cta: h.cta,
+        img: [bgImage1, bgImage2, bgImage3][i],
+        after: h.after,
+      })),
+    [t]
   );
 
   const portfolioSlides = useMemo(
     () => [
-      { title: "Bloc rezidențial", img: bloc_residential },
-      { title: "Instalații apă canal RAJA", img: apa_canal_raja },
-      { title: "Hidranți Romstal", img: hidranti_romstal },
-      { title: "Lucrări construcții", img: lucrari_constructii },
-      { title: "Kaufland", img: kaufland },
-      { title: "Subtraversare", img: subtraversare },
+      { title: t.portfolioSlides[0].title, img: bloc_residential, cta: t.portfolioCta },
+      { title: t.portfolioSlides[1].title, img: apa_canal_raja, cta: t.portfolioCta },
+      { title: t.portfolioSlides[2].title, img: hidranti_romstal, cta: t.portfolioCta },
+      { title: t.portfolioSlides[3].title, img: lucrari_constructii, cta: t.portfolioCta },
+      { title: t.portfolioSlides[4].title, img: kaufland, cta: t.portfolioCta },
+      { title: t.portfolioSlides[5].title, img: subtraversare, cta: t.portfolioCta },
     ],
-    []
+    [t]
   );
 
   const [heroRef, heroApi] = useEmblaCarousel(
@@ -115,162 +337,96 @@ export default function HomePage() {
 
   return (
     <>
-    <NavigationBar />
-    <main>
-      {/* ---------------- HERO ---------------- */}
-      <section className="hero-section">
-        <div className="embla" ref={heroRef}>
-          <div className="embla__container">
-            {heroSlides.map((s, idx) => (
-              <article className="embla__slide" key={idx}>
-                <img src={s.img} alt={s.title} className="embla__img" />
-                <div className="overlay">
-                  <h3>{s.title}</h3>
-                  {s.after && <p>{s.after}</p>}
-                  <a href="#" className="cta">{s.cta}</a>
-                </div>
-              </article>
+      <NavigationBar />
+      <main>
+        {/* ---------------- HERO ---------------- */}
+        <section className="hero-section">
+          <div className="embla" ref={heroRef}>
+            <div className="embla__container">
+              {heroSlides.map((s, idx) => (
+                <article className="embla__slide" key={idx}>
+                  <img src={s.img} alt={s.title} className="embla__img" />
+                  <div className="overlay">
+                    <h3>{s.title}</h3>
+                    {s.after && <p>{s.after}</p>}
+                    <a href="/about" className="cta">{s.cta}</a>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+          <div className="dots">
+            {heroSnaps.map((_, i) => (
+              <button
+                key={i}
+                className={`dot ${i === heroIndex ? "active" : ""}`}
+                onClick={() => heroApi && heroApi.scrollTo(i)}
+              />
             ))}
           </div>
-        </div>
-        <div className="dots">
-          {heroSnaps.map((_, i) => (
-            <button
-              key={i}
-              className={`dot ${i === heroIndex ? "active" : ""}`}
-              onClick={() => heroApi && heroApi.scrollTo(i)}
-            />
-          ))}
-        </div>
-      </section>
+        </section>
 
-      {/* ---------------- SERVICES ---------------- */}
-      <section className="section">
-        <h2 className="heading">Servicii</h2>
-        <div className="services-container">
-          <ServiceItem
-            title="Instalații sanitare și de incendiu"
-            image={service1Image}
-            listItems={[
-              "Executăm și întreținem instalații de stingere incendiu – hidranți, sprinklere, drencere, stații de pompare",
-              "Suntem autorizați IGSU",
-            ]}
-          />
-          <ServiceItem
-            title="Instalații ventilație și desfumare"
-            image={service2Image}
-            listItems={[
-              "Executăm și întreținem instalații desfumare (tubulatură specifică)",
-              "Suntem autorizați IGSU",
-            ]}
-          />
-          <ServiceItem
-            title="Foraj orizontal dirijat – subtraversare"
-            image={service3Image}
-            listItems={[
-              "Executăm lucrări de înlocuire și/sau extindere conducte gaze, apă, cabluri electrice sau fibră optică cu echipament de foraj dirijabil cu diametre de până la 500 mm.",
-            ]}
-          />
-          <ServiceItem
-            title="Instalații termice și de climatizare"
-            image={service5Image}
-            description="Executăm și întreținem"
-            listItems={[
-              "instalații HVAC",
-              "instalații ACM",
-              "instalații centrale termice industriale",
-              "sisteme climatizare multisplit",
-              "sisteme VRV",
-            ]}
-          />
-          <ServiceItem
-            title="Instalații și lucrări edilitare"
-            image={service4Image}
-            listItems={[
-              "Executăm marcaje rutiere, parcări cu vopsea monocomponentă, bicomponentă sau preformate Swarco",
-              "Suntem autorizați BRML și RAJA pentru lucrări de apă și canalizare.",
-            ]}
-          />
-          <ServiceItem
-            title="Instalații electrice"
-            image={service6Image}
-            listItems={[
-              "Executăm și întreținem instalații electrice de joasă tensiune",
-              "Efectuăm măsurători PRAM",
-              "Suntem autorizați ANRE",
-            ]}
-          />
-          <ServiceItem
-            title="Alte lucrări"
-            image={service7Image}
-            listItems={["Executăm săpături, taluzări, demolări, tăiat asfalt, asfaltări."]}
-          />
-          <ServiceItem
-            title="Constructii civile"
-            image={service8Image}
-            listItems={[
-              '<b>Rezidentiale</b>: Ansamblu de locuinte (blocuri, vile, case), apartamentem duplexuri.',
-              "<b>Social-culturale</b>: Scoli, gradinite, sali de sport, teatre, biblioteci, muzee.",
-              "<b>Administrative</b>: Cladiri de birouri, sedii administratiuve, centre comerciale.",
-              "<b>Hoteluri si pensiuni</b>: Structuri destinate cazarii si turismului.",
-              "<b>Restaurate si fast-food-uri</b>: Localuri publice pentru servirea mesei.",
-            ]}
-          />
-        </div>
-      </section>
-
-      {/* ---------------- PORTFOLIO ---------------- */}
-      <section className="portfolio-section">
-        <h2 className="header">Portofoliu</h2>
-        <div className="embla" ref={portRef}>
-          <div className="embla__container">
-            {portfolioSlides.map((s, idx) => (
-              <article className="embla__slide" key={idx}>
-                <img src={s.img} alt={s.title} className="embla__img" />
-                <div className="overlay">
-                  <h3>{s.title}</h3>
-                  <a href="/portofolio" className="cta">{s.cta}</a>
-                </div>
-              </article>
+        {/* ---------------- SERVICES ---------------- */}
+        <section className="section">
+          <h2 className="heading">{t.headings.services}</h2>
+          <div className="services-container">
+            {t.services.map((svc, idx) => (
+              <ServiceItem
+                key={idx}
+                title={svc.title}
+                image={svc.image}
+                description={svc.description}
+                listItems={svc.items}
+              />
             ))}
           </div>
-        </div>
-        <div className="dots">
-          {portSnaps.map((_, i) => (
-            <button
-              key={i}
-              className={`dot ${i === portIndex ? "active" : ""}`}
-              onClick={() => portApi && portApi.scrollTo(i)}
-            />
-          ))}
-        </div>
-      </section>
+        </section>
 
-      {/* ---------------- ABOUT US ---------------- */}
-      <section className="aboutus-section">
-        <div className="container">
-          <h2>Calitate și profesionalism.</h2>
-          <p>
-            Ne adresăm unei game largi de clienți, fiecare lucrare fiind tratată în mod
-            profesionist, răspunzând cerințelor acestora. Investim în calitatea
-            serviciilor și pregătirea profesională a angajaților noștri, pentru a răspunde
-            prompt standardelor piețelor.
-          </p>
-          <a href="/about" className="aboutus-button">Află mai mult</a>
-        </div>
-        <div className="container">
-          <div className="card">
-            {/* <p className="subtitle">Echipa noastră / Utilajele noastre</p> */}
-            <img src={cp_1} alt="Team" className="au_image" />
+        {/* ---------------- PORTFOLIO ---------------- */}
+        <section className="portfolio-section">
+          <h2 className="header">{t.headings.portfolio}</h2>
+          <div className="embla" ref={portRef}>
+            <div className="embla__container">
+              {portfolioSlides.map((s, idx) => (
+                <article className="embla__slide" key={idx}>
+                  <img src={s.img} alt={s.title} className="embla__img" />
+                  <div className="overlay">
+                    <h3>{s.title}</h3>
+                    <a href="/portofolio" className="cta">{t.portfolioCta}</a>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
-          <div className="card">
-            {/* <p className="subtitle">Sediul nostru din Constanța</p> */}
-            <img src={cp_2} alt="Sediu" className="au_image" />
+          <div className="dots">
+            {portSnaps.map((_, i) => (
+              <button
+                key={i}
+                className={`dot ${i === portIndex ? "active" : ""}`}
+                onClick={() => portApi && portApi.scrollTo(i)}
+              />
+            ))}
           </div>
-        </div>
-      </section>
-    </main>
-    <Footer />
+        </section>
+
+        {/* ---------------- ABOUT US ---------------- */}
+        <section className="aboutus-section">
+          <div className="container">
+            <h2>{t.headings.aboutTitle}</h2>
+            <p>{t.aboutText}</p>
+            <a href="/about" className="aboutus-button">{t.headings.aboutCta}</a>
+          </div>
+          <div className="container">
+            <div className="card">
+              <img src={cp_1} alt="Team" className="au_image" />
+            </div>
+            <div className="card">
+              <img src={cp_2} alt="Headquarters" className="au_image" />
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
     </>
   );
 }
