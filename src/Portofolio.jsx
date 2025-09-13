@@ -100,10 +100,10 @@ export default function AboutPage() {
         title: "penny buzau",
         img: image18
       },
-      {
-        title: "penny focsani",
-        img: image19
-      },
+      // {
+      //   title: "penny focsani",
+      //   img: image19
+      // },
       // {
       //   title: "penny galați",
       //   img: image20

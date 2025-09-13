@@ -37,18 +37,18 @@ export default function HomePage() {
     () => [
       {
         title: "PowerON",
-        cta: "Learn More",
+        cta: "Află mai mult",
         img: bgImage1,
         after:
-          "We specialize in delivering high-quality construction and infrastructure solutions tailored to your needs.",
+          "Suntem specializați în furnizarea de soluții de construcții și infrastructură de înaltă calitate, adaptate nevoilor tale.",
       },
       {
         title: "Instalare",
-        cta: "Learn More",
+        cta: "Află mai mult",
         img: bgImage2,
-        after: "Instalare panouri solare, pompă de căldură si climatizare",
+        after: "Instalare panouri solare, pompă de căldură și climatizare.",
       },
-      { title: "Let’s Build Together", cta: "Contact Us", img: bgImage3, after: "" },
+      { title: "Construim împreună", cta: "Contactează-ne", img: bgImage3, after: "" },
     ],
     []
   );
@@ -146,7 +146,7 @@ export default function HomePage() {
 
       {/* ---------------- SERVICES ---------------- */}
       <section className="section">
-        <h2 className="heading">Services</h2>
+        <h2 className="heading">Servicii</h2>
         <div className="services-container">
           <ServiceItem
             title="Instalații sanitare și de incendiu"
@@ -172,14 +172,6 @@ export default function HomePage() {
             ]}
           />
           <ServiceItem
-            title="Instalații și lucrări edilitare"
-            image={service4Image}
-            listItems={[
-              "Executăm marcaje rutiere, parcări cu vopsea monocomponentă, bicomponentă sau preformate Swarco",
-              "Suntem autorizați BRML și RAJA pentru lucrări de apă și canalizare.",
-            ]}
-          />
-          <ServiceItem
             title="Instalații termice și de climatizare"
             image={service5Image}
             description="Executăm și întreținem"
@@ -189,6 +181,14 @@ export default function HomePage() {
               "instalații centrale termice industriale",
               "sisteme climatizare multisplit",
               "sisteme VRV",
+            ]}
+          />
+          <ServiceItem
+            title="Instalații și lucrări edilitare"
+            image={service4Image}
+            listItems={[
+              "Executăm marcaje rutiere, parcări cu vopsea monocomponentă, bicomponentă sau preformate Swarco",
+              "Suntem autorizați BRML și RAJA pentru lucrări de apă și canalizare.",
             ]}
           />
           <ServiceItem
@@ -212,7 +212,7 @@ export default function HomePage() {
               '<b>Rezidentiale</b>: Ansamblu de locuinte (blocuri, vile, case), apartamentem duplexuri.',
               "<b>Social-culturale</b>: Scoli, gradinite, sali de sport, teatre, biblioteci, muzee.",
               "<b>Administrative</b>: Cladiri de birouri, sedii administratiuve, centre comerciale.",
-              "<b>Hoteluri si pensiuni</b>: Structuri edstinate cazarii si turismului.",
+              "<b>Hoteluri si pensiuni</b>: Structuri destinate cazarii si turismului.",
               "<b>Restaurate si fast-food-uri</b>: Localuri publice pentru servirea mesei.",
             ]}
           />
@@ -221,7 +221,7 @@ export default function HomePage() {
 
       {/* ---------------- PORTFOLIO ---------------- */}
       <section className="portfolio-section">
-        <h2 className="header">Portfolio</h2>
+        <h2 className="header">Portofoliu</h2>
         <div className="embla" ref={portRef}>
           <div className="embla__container">
             {portfolioSlides.map((s, idx) => (
@@ -256,7 +256,7 @@ export default function HomePage() {
             serviciilor și pregătirea profesională a angajaților noștri, pentru a răspunde
             prompt standardelor piețelor.
           </p>
-          <a href="/about" className="aboutus-button">Learn More</a>
+          <a href="/about" className="aboutus-button">Află mai mult</a>
         </div>
         <div className="container">
           <div className="card">
