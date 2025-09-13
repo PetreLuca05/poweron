@@ -22,6 +22,7 @@ import image17 from "./assets/28.jpg";
 import image18 from "./assets/28.jpg";
 import image19 from "./assets/27.jpg";
 import image20 from "./assets/26.jpg";
+import image21 from "./assets/52.jpg";
 
 import Footer from "./components/Footer";
 
@@ -99,6 +100,10 @@ export default function AboutPage() {
       {
         title: "penny buzau",
         img: image18
+      },
+      {
+        title: "instalare de canalizare Terminal DP World Constanța",
+        img: image21
       },
       // {
       //   title: "penny focsani",
