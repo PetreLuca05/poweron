@@ -153,7 +153,7 @@ function NavigationBar() {
           aria-label={t.langAria}
           title={t.langAria}
         >
-          {t.langBtn}
+          {t.langBtn === "EN" ? (<span lang="en">RO</span>) : (<span lang="ro">EN</span>)}
         </button>
       </nav>
     </header>
