@@ -5,6 +5,7 @@ import NavigationBar from './components/NavigationBar';
 import "./Home.css";
 import Footer from "./components/Footer";
 import { useLanguage } from "./components/LanguageContext.jsx";
+import { NavLink, useNavigate } from 'react-router-dom';
 
 // Images
 import team from "./assets/1.jpeg";
@@ -22,7 +23,7 @@ import subtraversare from "./assets/42.jpg";
 import service1Image from "./assets/5.jpg";
 import service2Image from "./assets/9.jpg";
 import service3Image from "./assets/24.jpg";
-import service4Image from "./assets/3.jpg";
+import service4Image from "./assets/52.jpg";
 import service5Image from "./assets/11.jpg";
 import service6Image from "./assets/53.jpg";
 import service7Image from "./assets/17.jpg";
@@ -101,7 +102,7 @@ export default function HomePage() {
             title: "Utility installations and civil works",
             description: null,
             items: [
-              "We execute road markings, parking lots with mono-component, bi-component paint, or Swarco preformed",
+          
               "BRML and RAJA authorized for water and sewer works.",
             ],
             image: service4Image,
@@ -214,7 +215,7 @@ export default function HomePage() {
           title: "Instalații și lucrări edilitare",
           description: null,
           items: [
-            "Executăm marcaje rutiere, parcări cu vopsea monocomponentă, bicomponentă sau preformate Swarco",
+
             "Suntem autorizați BRML și RAJA pentru lucrări de apă și canalizare.",
           ],
           image: service4Image,
@@ -349,7 +350,11 @@ export default function HomePage() {
                   <div className="overlay">
                     <h3>{s.title}</h3>
                     {s.after && <p>{s.after}</p>}
-                    <a href="/about" className="cta">{s.cta}</a>
+                    {s.cta === "Contact Us" || s.cta === "Contactează-ne" ? (
+                      <NavLink to="/contact" className="cta">{s.cta}</NavLink>
+                    ) : (
+                       <NavLink to="/about" className="cta">{s.cta}</NavLink>
+                    )}
                   </div>
                 </article>
               ))}
@@ -392,7 +397,7 @@ export default function HomePage() {
                   <img src={s.img} alt={s.title} className="embla__img" />
                   <div className="overlay">
                     <h3>{s.title}</h3>
-                    <a href="/portofolio" className="cta">{t.portfolioCta}</a>
+                    <NavLink to="/portofolio" className="cta">{t.portfolioCta}</NavLink>
                   </div>
                 </article>
               ))}
@@ -414,7 +419,7 @@ export default function HomePage() {
           <div className="container">
             <h2>{t.headings.aboutTitle}</h2>
             <p>{t.aboutText}</p>
-            <a href="/about" className="aboutus-button">{t.headings.aboutCta}</a>
+            <NavLink to="/about" className="aboutus-button" onClick={close}>{t.headings.aboutCta}</NavLink>
           </div>
           <div className="container">
             <div className="card">
