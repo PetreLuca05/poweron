@@ -24,7 +24,7 @@ import service2Image from "./assets/9.jpg";
 import service3Image from "./assets/24.jpg";
 import service4Image from "./assets/3.jpg";
 import service5Image from "./assets/11.jpg";
-import service6Image from "./assets/25.jpg";
+import service6Image from "./assets/53.jpg";
 import service7Image from "./assets/17.jpg";
 import service8Image from "./assets/44.jpg";
 
@@ -93,7 +93,7 @@ export default function HomePage() {
             title: "Horizontal directional drilling – underpass",
             description: null,
             items: [
-              "We replace and/or extend gas, water pipes, power cables or fiber optics with steerable drilling equipment up to 500 mm diameter.",
+              "We replace and/or extend gas, water pipes, power cables or fiber optics with steerable drilling equipment up to 500.",
             ],
             image: service3Image,
           },
@@ -206,7 +206,7 @@ export default function HomePage() {
           title: "Foraj orizontal dirijat – subtraversare",
           description: null,
           items: [
-            "Executăm lucrări de înlocuire și/sau extindere conducte gaze, apă, cabluri electrice sau fibră optică cu echipament de foraj dirijabil cu diametre de până la 500 mm.",
+            "Executăm lucrări de înlocuire și/sau extindere conducte gaze, apă, cabluri electrice sau fibră optică cu echipament de foraj dirijabil cu diametre de până la 500.",
           ],
           image: service3Image,
         },
