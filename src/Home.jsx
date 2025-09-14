@@ -107,18 +107,18 @@ export default function HomePage() {
             ],
             image: service4Image,
           },
-          {
-            title: "Thermal and air-conditioning installations",
-            description: "We build and maintain",
-            items: [
-              "HVAC systems",
-              "DHW (domestic hot water) systems",
-              "industrial boiler room installations",
-              "multi-split air-conditioning systems",
-              "VRV systems",
-            ],
-            image: service5Image,
-          },
+          // {
+          //   title: "Thermal and air-conditioning installations",
+          //   description: "We build and maintain",
+          //   items: [
+          //     "HVAC systems",
+          //     "DHW (domestic hot water) systems",
+          //     "industrial boiler room installations",
+          //     "multi-split air-conditioning systems",
+          //     "VRV systems",
+          //   ],
+          //   image: service5Image,
+          // },
           {
             title: "Electrical installations",
             description: null,
@@ -220,18 +220,18 @@ export default function HomePage() {
           ],
           image: service4Image,
         },
-        {
-          title: "Instalații termice și de climatizare",
-          description: "Executăm și întreținem",
-          items: [
-            "instalații HVAC",
-            "instalații ACM",
-            "instalații centrale termice industriale",
-            "sisteme climatizare multisplit",
-            "sisteme VRV",
-          ],
-          image: service5Image,
-        },
+        // {
+        //   title: "Instalații termice și de climatizare",
+        //   description: "Executăm și întreținem",
+        //   items: [
+        //     "instalații HVAC",
+        //     "instalații ACM",
+        //     "instalații centrale termice industriale",
+        //     "sisteme climatizare multisplit",
+        //     "sisteme VRV",
+        //   ],
+        //   image: service5Image,
+        // },
         {
           title: "Instalații electrice",
           description: null,
